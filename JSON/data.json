@@ -8,7 +8,8 @@
       "phone": "070-2659-0738",
       "position": "部長",
       "email": "satominoru@hotmail.com",
-      "remarks": "長期契約あり"
+      "remarks": "長期契約あり",
+      "favorite": true
     },
     {
       "company": "株式会社ABC",
@@ -19,7 +20,8 @@
       "phone": "54-5073-7536",
       "position": "部長",
       "email": "inoueyosuke@yahoo.com",
-      "remarks": "新規開拓担当"
+      "remarks": "新規開拓担当",
+      "favorite": false
     },
     {
       "company": "株式会社Foo",
@@ -30,7 +32,8 @@
       "phone": "070-3488-6933",
       "position": "部長",
       "email": "yuta54@gmail.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": true
     },
     {
       "company": "株式会社Foo",
@@ -41,7 +44,8 @@
       "phone": "090-4410-9097",
       "position": "係長",
       "email": "hanako59@hotmail.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": false
     },
     {
       "company": "株式会社Bar",
@@ -52,7 +56,8 @@
       "phone": "080-9785-8795",
       "position": "担当",
       "email": "kanakobayashi@gmail.com",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": true
     },
     {
       "company": "株式会社Foo",
@@ -63,7 +68,8 @@
       "phone": "070-9708-1159",
       "position": "課長",
       "email": "minoru62@ota.com",
-      "remarks": "新規開拓担当"
+      "remarks": "新規開拓担当",
+      "favorite": false
     },
     {
       "company": "株式会社Baz",
@@ -74,7 +80,8 @@
       "phone": "56-7858-6686",
       "position": "課長",
       "email": "atsushiyamaguchi@hotmail.com",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": false
     },
     {
       "company": "株式会社Foo",
@@ -85,7 +92,8 @@
       "phone": "080-1081-1161",
       "position": "課長",
       "email": "akemisato@suzuki.com",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": true
     },
     {
       "company": "株式会社Bar",
@@ -96,7 +104,8 @@
       "phone": "26-6235-1670",
       "position": "課長",
       "email": "satomi65@hotmail.com",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": false
     },
     {
       "company": "株式会社XYZ",
@@ -107,7 +116,8 @@
       "phone": "070-1691-6241",
       "position": "課長",
       "email": "nanaminakagawa@kobayashi.com",
-      "remarks": "新規開拓担当"
+      "remarks": "新規開拓担当",
+      "favorite": true
     },
     {
       "company": "株式会社Bar",
@@ -118,7 +128,8 @@
       "phone": "070-2050-7870",
       "position": "課長",
       "email": "lsato@kobayashi.jp",
-      "remarks": "特記事項なし"
+      "remarks": "特記事項なし",
+      "favorite": true
     },
     {
       "company": "株式会社Bar",
@@ -129,7 +140,8 @@
       "phone": "090-1760-2720",
       "position": "課長",
       "email": "yamashitaasuka@watanabe.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": false
     },
     {
       "company": "株式会社Bar",
@@ -140,7 +152,8 @@
       "phone": "080-9796-8860",
       "position": "課長",
       "email": "maisasaki@shimizu.jp",
-      "remarks": "新規開拓担当"
+      "remarks": "新規開拓担当",
+      "favorite": true
     },
     {
       "company": "株式会社Foo",
@@ -151,7 +164,8 @@
       "phone": "070-5204-8135",
       "position": "担当",
       "email": "reimaeda@kobayashi.jp",
-      "remarks": "特記事項なし"
+      "remarks": "特記事項なし",
+      "favorite": false
     },
     {
       "company": "株式会社XYZ",
@@ -162,7 +176,8 @@
       "phone": "090-1541-3668",
       "position": "課長",
       "email": "dsuzuki@hotmail.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": true
     },
     {
       "company": "株式会社XYZ",
@@ -173,7 +188,8 @@
       "phone": "59-6542-4700",
       "position": "課長",
       "email": "byamaguchi@suzuki.net",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": true
     },
     {
       "company": "株式会社ABC",
@@ -184,7 +200,8 @@
       "phone": "090-7265-5609",
       "position": "部長",
       "email": "nakamurayuta@hayashi.jp",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": true
     },
     {
       "company": "株式会社Foo",
@@ -195,7 +212,8 @@
       "phone": "070-5806-4722",
       "position": "部長",
       "email": "zmurakami@gmail.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": false
     },
     {
       "company": "株式会社ABC",
@@ -206,7 +224,8 @@
       "phone": "61-4901-2616",
       "position": "係長",
       "email": "sayuri61@gmail.com",
-      "remarks": "特記事項なし"
+      "remarks": "特記事項なし",
+      "favorite": false
     },
     {
       "company": "株式会社XYZ",
@@ -217,7 +236,8 @@
       "phone": "090-5846-2944",
       "position": "担当",
       "email": "junkondo@yamaguchi.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": false
     },
     {
       "company": "株式会社ABC",
@@ -228,7 +248,8 @@
       "phone": "45-8312-8201",
       "position": "担当",
       "email": "satomiyamamoto@hotmail.com",
-      "remarks": "長期契約あり"
+      "remarks": "長期契約あり",
+      "favorite": true
     },
     {
       "company": "株式会社XYZ",
@@ -239,7 +260,8 @@
       "phone": "070-2246-5323",
       "position": "係長",
       "email": "yoichimiura@endo.org",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": true
     },
     {
       "company": "株式会社Bar",
@@ -250,7 +272,8 @@
       "phone": "50-1019-7236",
       "position": "担当",
       "email": "kazuya23@ogawa.org",
-      "remarks": "新規開拓担当"
+      "remarks": "新規開拓担当",
+      "favorite": false
     },
     {
       "company": "株式会社Bar",
@@ -261,7 +284,8 @@
       "phone": "080-8782-6885",
       "position": "課長",
       "email": "isaito@murakami.com",
-      "remarks": "新規開拓担当"
+      "remarks": "新規開拓担当",
+      "favorite": false
     },
     {
       "company": "株式会社ABC",
@@ -272,7 +296,8 @@
       "phone": "080-0446-2607",
       "position": "担当",
       "email": "fhashimoto@yoshida.com",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": true
     },
     {
       "company": "株式会社Baz",
@@ -283,7 +308,8 @@
       "phone": "080-7359-8985",
       "position": "主任",
       "email": "yutasasaki@abe.com",
-      "remarks": "特記事項なし"
+      "remarks": "特記事項なし",
+      "favorite": false
     },
     {
       "company": "株式会社Baz",
@@ -294,7 +320,8 @@
       "phone": "070-8302-8637",
       "position": "担当",
       "email": "gkato@tanaka.com",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": true
     },
     {
       "company": "株式会社Bar",
@@ -305,7 +332,8 @@
       "phone": "98-6184-3470",
       "position": "担当",
       "email": "kmori@yahoo.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": true
     },
     {
       "company": "株式会社XYZ",
@@ -316,7 +344,8 @@
       "phone": "080-9656-1981",
       "position": "係長",
       "email": "fukudashohei@gmail.com",
-      "remarks": "長期契約あり"
+      "remarks": "長期契約あり",
+      "favorite": false
     },
     {
       "company": "株式会社XYZ",
@@ -327,7 +356,8 @@
       "phone": "070-4786-8974",
       "position": "担当",
       "email": "csato@gmail.com",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": true
     },
     {
       "company": "株式会社ABC",
@@ -338,7 +368,8 @@
       "phone": "33-1310-8102",
       "position": "係長",
       "email": "iwatanabe@miura.net",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": true
     },
     {
       "company": "株式会社Foo",
@@ -349,7 +380,8 @@
       "phone": "090-2072-6878",
       "position": "担当",
       "email": "taichiyamazaki@gmail.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": false
     },
     {
       "company": "株式会社Baz",
@@ -360,7 +392,8 @@
       "phone": "090-1526-0360",
       "position": "課長",
       "email": "qikeda@gmail.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": true
     },
     {
       "company": "株式会社ABC",
@@ -371,7 +404,8 @@
       "phone": "090-2840-2895",
       "position": "部長",
       "email": "osamuhasegawa@gmail.com",
-      "remarks": "特記事項なし"
+      "remarks": "特記事項なし",
+      "favorite": false
     },
     {
       "company": "株式会社Bar",
@@ -382,7 +416,8 @@
       "phone": "090-7860-2886",
       "position": "課長",
       "email": "mituru78@ishii.jp",
-      "remarks": "新規開拓担当"
+      "remarks": "新規開拓担当",
+      "favorite": true
     },
     {
       "company": "株式会社ABC",
@@ -393,7 +428,8 @@
       "phone": "070-7200-0562",
       "position": "担当",
       "email": "cmatsumoto@hotmail.com",
-      "remarks": "特記事項なし"
+      "remarks": "特記事項なし",
+      "favorite": true
     },
     {
       "company": "株式会社ABC",
@@ -404,7 +440,8 @@
       "phone": "090-7985-4215",
       "position": "主任",
       "email": "hanakoshimizu@kimura.org",
-      "remarks": "新規開拓担当"
+      "remarks": "新規開拓担当",
+      "favorite": true
     },
     {
       "company": "株式会社Bar",
@@ -415,7 +452,8 @@
       "phone": "090-4276-7564",
       "position": "担当",
       "email": "sayuriabe@ikeda.jp",
-      "remarks": "長期契約あり"
+      "remarks": "長期契約あり",
+      "favorite": false
     },
     {
       "company": "株式会社Baz",
@@ -426,7 +464,8 @@
       "phone": "47-5237-2931",
       "position": "主任",
       "email": "okadayui@gmail.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": true
     },
     {
       "company": "株式会社XYZ",
@@ -437,7 +476,8 @@
       "phone": "25-9044-5965",
       "position": "担当",
       "email": "nogawa@yahoo.com",
-      "remarks": "長期契約あり"
+      "remarks": "長期契約あり",
+      "favorite": false
     },
     {
       "company": "株式会社Foo",
@@ -448,7 +488,8 @@
       "phone": "70-4089-9711",
       "position": "部長",
       "email": "sito@gmail.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": false
     },
     {
       "company": "株式会社XYZ",
@@ -459,7 +500,8 @@
       "phone": "090-6892-5997",
       "position": "部長",
       "email": "jun88@nishimura.net",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": false
     },
     {
       "company": "株式会社Baz",
@@ -470,7 +512,8 @@
       "phone": "40-3170-6610",
       "position": "主任",
       "email": "maayawatanabe@ikeda.jp",
-      "remarks": "長期契約あり"
+      "remarks": "長期契約あり",
+      "favorite": true
     },
     {
       "company": "株式会社XYZ",
@@ -481,7 +524,8 @@
       "phone": "090-9164-3436",
       "position": "担当",
       "email": "wyamazaki@takahashi.jp",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": true
     },
     {
       "company": "株式会社ABC",
@@ -492,7 +536,8 @@
       "phone": "090-4765-5446",
       "position": "部長",
       "email": "shimizuryosuke@hayashi.com",
-      "remarks": "フォローアップ中"
+      "remarks": "フォローアップ中",
+      "favorite": true
     },
     {
       "company": "株式会社Foo",
@@ -503,7 +548,8 @@
       "phone": "090-6805-7661",
       "position": "担当",
       "email": "watanabeyoichi@gmail.com",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": false
     },
     {
       "company": "株式会社XYZ",
@@ -514,7 +560,8 @@
       "phone": "080-3920-2286",
       "position": "担当",
       "email": "tanakananami@takahashi.com",
-      "remarks": "特記事項なし"
+      "remarks": "特記事項なし",
+      "favorite": false
     },
     {
       "company": "株式会社XYZ",
@@ -525,7 +572,8 @@
       "phone": "080-2456-7990",
       "position": "主任",
       "email": "yokohasegawa@yahoo.com",
-      "remarks": "長期契約あり"
+      "remarks": "長期契約あり",
+      "favorite": true
     },
     {
       "company": "株式会社XYZ",
@@ -536,7 +584,8 @@
       "phone": "090-6448-1464",
       "position": "課長",
       "email": "lyamashita@suzuki.jp",
-      "remarks": "新規開拓担当"
+      "remarks": "新規開拓担当",
+      "favorite": false
     },
     {
       "company": "株式会社Bar",
@@ -547,6 +596,7 @@
       "phone": "23-2363-8195",
       "position": "係長",
       "email": "cyamada@gmail.com",
-      "remarks": "重要顧客担当"
+      "remarks": "重要顧客担当",
+      "favorite": false
     }
   ]
