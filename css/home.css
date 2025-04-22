@@ -124,7 +124,7 @@ body a {
 
 .search-input {
     flex: 1;
-    padding: 12px 20px;
+    padding: 15px 40px;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 24px;
@@ -139,13 +139,13 @@ body a {
 }
 
 .search-button {
-    margin-left: 10px;
-    padding: 10px 20px;
+    margin-left: 20px;
+    padding: 13px 30px;
     font-size: 16px;
     color: #fff;
     background-color: #4285f4;
     border: none;
-    border-radius: 24px;
+    border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -154,7 +154,189 @@ body a {
     background-color: #357ae8;
 }
 
+/* 右下に固定された追加ボタン */
+.add-button {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 80px;
+    height: 80px;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000; /* 他の要素より前面に表示 */
+}
 
+.add-button:hover {
+    background-color: #357ae8;
+    transform: scale(1.1);
+}
+
+.add-button:active {
+    background-color: #2a65c7;
+    transform: scale(0.95);
+}
+
+/* モーダルの背景 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(184, 184, 184, 0.2); /* 背景を薄く白くする */
+    backdrop-filter: blur(8px); /* モザイク効果を追加 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* モーダルが表示されるときのスタイル */
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* モーダルのコンテンツ */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* モーダル内のテーブル */
+.modal-table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.modal-content table td {
+    padding: 15px;
+    vertical-align: top;
+}
+
+.modal-content label {
+    margin-left: 50px;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    text-align-last: left;
+}
+
+.modal-content input {
+    margin-left: 10px;
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.modal-content input:focus {
+    border-color: #4285f4;
+    box-shadow: 0 2px 4px rgba(66, 133, 244, 0.2);
+}
+
+.modal-button-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+.modal-button-submit, .modal-button-reset {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #4285f4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-button-submit {
+    background-color: #4285f4;
+}
+
+.modal-button-reset {
+    background-color: #464646;
+}
+
+.modal-content #error_message {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #f44336;
+}
+
+.close-button {
+    margin-top: 10px;
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: #d32f2f;
+}
+
+/* 名刺カードリスト */
+.card-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 名刺カード */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
 
 /* ダークモード */
 body.dark-mode {
@@ -193,3 +375,5 @@ body.dark-mode #link {
     text-decoration: none;
     background-color: #333;
 }
+
+
