@@ -338,7 +338,10 @@ body a {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    justify-content: center;}
+    justify-content: flex-start; /* 左揃え */
+    max-width: 1400px; /* リスト全体の幅を制限 */
+    margin: 0 auto; /* リスト全体を中央揃え */
+}
 
 /* 名刺カード */
 .card {
