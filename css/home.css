@@ -325,7 +325,39 @@ body a {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    
+}
+.edit-button {
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #4285f4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.delete-button {
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.favorite-button {
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: rgb(231, 231, 0);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .close-button:hover {

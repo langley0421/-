@@ -73,10 +73,31 @@ document.addEventListener('DOMContentLoaded', () => {
             detailModal.innerHTML = `
                 <div class="modal-contents">
                     ${card.dataset.details}
+                    <button class="edit-button">編集</button>
+                    <button class="delete-button">削除</button>
+                    <button class="favorite-button">☆ お気に入り</button>
                     <button class="close-button">閉じる</button>
                 </div>
             `;
             document.body.appendChild(detailModal);
+
+            // 編集ボタンの動作
+            detailModal.querySelector('.edit-button').addEventListener('click', () => {
+                // 編集処理をここに追加
+            });
+
+            // 削除ボタンの動作
+            detailModal.querySelector('.delete-button').addEventListener('click', () => {
+                // 削除処理をここに追加
+            });
+
+            // お気に入りボタンの動作
+            const favoriteButton = detailModal.querySelector('.favorite-button');
+            favoriteButton.addEventListener('click', () => {
+                cardData.favorite = !cardData.favorite;
+                favoriteButton.textContent = cardData.favorite ? '★ お気に入り' : '☆ お気に入り';
+                // お気に入り状態を更新する処理をここに追加
+            });
 
             // 詳細モーダルを閉じる
             detailModal.querySelector('.close-button').addEventListener('click', () => {
@@ -95,6 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
         resetButton.click();
     });
 
+
+
+
+
+    
     // JSONデータを読み込む
     fetch('../JSON/data.json') // JSONファイルのパスを指定
         .then(response => response.json())
@@ -155,10 +181,31 @@ document.addEventListener('DOMContentLoaded', () => {
             detailModal.innerHTML = `
                 <div class="modal-contents">
                     ${card.dataset.details}
+                    <button class="edit-button">編集</button>
+                    <button class="delete-button">削除</button>
+                    <button class="favorite-button">${cardData.favorite ? '★ お気に入り' : '☆ お気に入り'}</button>
                     <button class="close-button">閉じる</button>
                 </div>
             `;
             document.body.appendChild(detailModal);
+
+            // 編集ボタンの動作
+            detailModal.querySelector('.edit-button').addEventListener('click', () => {
+                // 編集処理をここに追加
+            });
+
+            // 削除ボタンの動作
+            detailModal.querySelector('.delete-button').addEventListener('click', () => {
+                // 削除処理をここに追加
+            });
+
+            // お気に入りボタンの動作
+            const favoriteButton = detailModal.querySelector('.favorite-button');
+            favoriteButton.addEventListener('click', () => {
+                cardData.favorite = !cardData.favorite;
+                favoriteButton.textContent = cardData.favorite ? '★ お気に入り' : '☆ お気に入り';
+                // お気に入り状態を更新する処理をここに追加
+            });
 
             // 詳細モーダルを閉じる
             detailModal.querySelector('.close-button').addEventListener('click', () => {
