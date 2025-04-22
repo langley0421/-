@@ -446,4 +446,12 @@ body.dark-mode #link {
     background-color: #333;
 }
 
+.no-result-message {
+    display: block;
+    margin: 0% auto;
+    color: #888;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
 
