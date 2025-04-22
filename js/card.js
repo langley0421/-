@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.querySelector('.modal-button-submit');
     const resetButton = document.querySelector('.modal-button-reset');
     const cardList = document.getElementById('card-list');
+    const favoriteLink = document.querySelector('.nav-link[href="#section2"]');
+    const homeLink = document.querySelector('.nav-link[href="#section1"]'); // ホームリンクを取得
+    let allCardsData = []; // 全てのカードデータを保持
 
     // モーダルを開く
     addButton.addEventListener('click', () => {
@@ -92,21 +95,33 @@ document.addEventListener('DOMContentLoaded', () => {
         resetButton.click();
     });
 
-
-
-
-
-
-
     // JSONデータを読み込む
     fetch('../JSON/data.json') // JSONファイルのパスを指定
         .then(response => response.json())
         .then(data => {
-            data.forEach(cardData => {
-                createCard(cardData); // 各データでカードを作成
-            });
+            allCardsData = data; // データを保存
+            displayCards(allCardsData); // 全てのカードを表示
         })
         .catch(error => console.error('JSONの読み込みに失敗しました:', error));
+
+    // お気に入りリンクをクリックしたとき
+    favoriteLink.addEventListener('click', () => {
+        const favoriteCards = allCardsData.filter(card => card.favorite); // favoriteがtrueのものを取得
+        displayCards(favoriteCards); // お気に入りカードを表示
+    });
+
+    // ホームリンクをクリックしたとき
+    homeLink.addEventListener('click', () => {
+        displayCards(allCardsData); // 全てのカードを表示
+    });
+
+    // カードを表示する関数
+    function displayCards(cards) {
+        cardList.innerHTML = ''; // 現在のカードをクリア
+        cards.forEach(cardData => {
+            createCard(cardData); // 各カードを作成
+        });
+    }
 
     // カードを作成する関数
     function createCard(cardData) {
