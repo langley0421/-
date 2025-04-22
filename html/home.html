@@ -34,10 +34,90 @@
             <input type="text" placeholder="名刺を検索 ．．．" class="search-input">
             <button class="search-button">検索</button>
         </div>
-        <!-- コンテンツ -->
+        
+        <div id="card-list" class="card-list">
+            <!-- ここに名刺カード -->
+        </div>
+
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>登録フォーム</h2>
+                <table class="modal-table">
+                    <tr>
+                      <td>
+                        <label>会社名<br>
+                            <input type="text" name="company">
+                        </label>
+                      </td>
+                      <td>
+                        <label>郵便番号<br>
+                        <input type="text" name="zipcode">
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>氏名（※必須）<br>
+                            <input type="text" name="name">
+                        </label>
+                      </td>
+                      <td>
+                        <label>住所<br>
+                        <input type="text" name="address">
+                        </label>
+                      </td>
+                     </tr>
+                     <tr>
+                      <td>
+                        <label>部署名<br>
+                        <input type="text" name="department">
+                        </label>
+                      </td>
+                      <td>
+                        <label>電話番号<br>
+                        <input type="text" name="phone">
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>役職名<br>
+                        <input type="text" name="position">
+                        </label>
+                      </td>
+                      <td>
+                        <label>メールアドレス<br>
+                            <input type="text" name="email">
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <label>備考<br>
+                            <input type="text" name="remarks">
+                            </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <div class="modal-button-container">
+                            <button class="modal-button-submit">送信</button>
+                            <button class="modal-button-reset">リセット</button>
+                        </div>
+                        <span id="error_message"></span>
+                      </td>
+                    </tr>
+                  </table>
+                <button class="close-button">閉じる</button>
+            </div>
+        </div>
+        <button class="add-button">
+            <span>＋</span>
+        </button>
     </main>
 
     <!-- JavaScript -->
     <script src="../js/home.js"></script>
+    <script src="../js/card.js"></script>
 </body>
 </html>
