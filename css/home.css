@@ -327,37 +327,43 @@ body a {
     transition: background-color 0.3s ease;
 }
 .edit-button {
-    margin: 0 auto;
-    margin-top: 10px;
-    background-color: #4285f4;
-    color: #fff;
+    margin: 10px 15x;
+    background-color: #fff;
+    border: 1px solid green;
+    color: black;
     padding: 10px 20px;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+.edit-button:hover {
+    background-color: #d4edda;
 }
 .delete-button {
-    margin: 0 auto;
-    margin-top: 10px;
-    background-color: #f44336;
-    color: #fff;
+    margin: 10px 5px;
+    background-color: #fff;
+    border: 1px solid red;    
+    color: black;
     padding: 10px 20px;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.delete-button:hover {
+    background-color: #f8d7da;
+}
 .favorite-button {
-    margin: 0 auto;
-    margin-top: 10px;
-    background-color: rgb(231, 231, 0);
-    color: #fff;
+    color: black;
+    margin: 10px 5px;
     padding: 10px 20px;
-    border: none;
+    background-color: #fff;
+    border: 1px solid #facc15;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+.favorite-button:hover {
+    background-color: #fff3cd;
 }
 
 .close-button:hover {
