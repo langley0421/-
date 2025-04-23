@@ -23,7 +23,7 @@ export function displayCards(cards, cardList, onCardClick) {
 
     if (cards.length === 0) {
         const noResultMessage = document.createElement('p');
-        noResultMessage.textContent = '該当するカードがありません。';
+        noResultMessage.textContent = '該当する名刺がありません。';
         noResultMessage.classList.add('no-result-message');
         cardList.appendChild(noResultMessage);
         return;
