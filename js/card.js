@@ -1,15 +1,31 @@
+// カードを追加するコード
+
+import {
+    createCardElement,
+    displayCards,
+    showDetailModal
+} from './utils.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-    const addButton = document.querySelector('.add-button');
-    const modal = document.querySelector('.modal');
-    const closeButton = document.querySelector('.close-button');
-    const submitButton = document.querySelector('.modal-button-submit');
-    const resetButton = document.querySelector('.modal-button-reset');
     const cardList = document.getElementById('card-list');
-    const favoriteLink = document.querySelector('.nav-link[href="#section2"]');
     const homeLink = document.querySelector('.nav-link[href="#section1"]');
+    const favoriteLink = document.querySelector('.nav-link[href="#section2"]');
     const searchInput = document.querySelector('.search-input');
     const searchButton = document.querySelector('.search-button');
+    const modal = document.querySelector('.modal');
+    const addButton = document.querySelector('.add-button');
+    const closeButton = document.querySelector('.close-button');
+    const resetButton = document.querySelector('.modal-button-reset');
+    const submitButton = document.querySelector('.modal-button-submit');
+
     let allCardsData = [];
+
+    fetch('../JSON/data.json')
+        .then(res => res.json())
+        .then(data => {
+            allCardsData = data;
+            displayCards(allCardsData, cardList, showDetailModal);
+        });
 
     addButton.addEventListener('click', () => {
         modal.classList.add('show');
@@ -22,9 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     resetButton.addEventListener('click', () => {
-        document.querySelectorAll('.modal-content input').forEach(input => {
-            input.value = '';
-        });
+        document.querySelectorAll('.modal-content input').forEach(input => input.value = '');
     });
 
     submitButton.addEventListener('click', () => {
@@ -46,121 +60,30 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const card = createCardElement(cardData);
+        const card = createCardElement(cardData, showDetailModal);
         cardList.appendChild(card);
-
         modal.classList.remove('show');
         modal.classList.add('hidden');
         resetButton.click();
     });
 
-    fetch('../JSON/data.json')
-        .then(response => response.json())
-        .then(data => {
-            allCardsData = data;
-            displayCards(allCardsData);
-        })
-        .catch(error => console.error('JSONの読み込みに失敗しました:', error));
-
-    favoriteLink.addEventListener('click', () => {
-        const favoriteCards = allCardsData.filter(card => card.favorite);
-        displayCards(favoriteCards);
+    homeLink.addEventListener('click', () => {
+        displayCards(allCardsData, cardList, showDetailModal);
     });
 
-    homeLink.addEventListener('click', () => {
-        displayCards(allCardsData);
+    favoriteLink.addEventListener('click', () => {
+        const favs = allCardsData.filter(card => card.favorite);
+        displayCards(favs, cardList, showDetailModal);
     });
 
     searchButton.addEventListener('click', () => {
         const query = searchInput.value.trim().toLowerCase();
-        const filteredCards = allCardsData.filter(card =>
+        const filtered = allCardsData.filter(card =>
             card.name.toLowerCase().includes(query) ||
             card.company.toLowerCase().includes(query) ||
             card.department.toLowerCase().includes(query) ||
             card.remarks.toLowerCase().includes(query)
         );
-        displayCards(filteredCards);
+        displayCards(filtered, cardList, showDetailModal);
     });
-
-    function displayCards(cards) {
-        cardList.innerHTML = '';
-
-        if (cards.length === 0) {
-            const noResultMessage = document.createElement('p');
-            noResultMessage.textContent = '該当するカードがありません。';
-            noResultMessage.classList.add('no-result-message');
-            cardList.appendChild(noResultMessage);
-            return;
-        }
-
-        cards.forEach(cardData => {
-            const card = createCardElement(cardData);
-            cardList.appendChild(card);
-        });
-    }
-
-    function createCardElement(cardData) {
-        const { company, name } = cardData;
-
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.innerHTML = `
-            <h3>${name}</h3>
-            <p>${company}</p>
-        `;
-        card.dataset.details = generateCardDetailsHTML(cardData);
-
-        card.addEventListener('click', () => {
-            showDetailModal(cardData, card);
-        });
-
-        return card;
-    }
-
-    function generateCardDetailsHTML(data) {
-        return `
-            <h3>${data.name}</h3>
-            <p>会社名: ${data.company}</p>
-            <p>郵便番号: ${data.zipcode}</p>
-            <p>住所: ${data.address}</p>
-            <p>部署名: ${data.department}</p>
-            <p>電話番号: ${data.phone}</p>
-            <p>役職名: ${data.position}</p>
-            <p>メールアドレス: ${data.email}</p>
-            <p>備考: ${data.remarks}</p>
-        `;
-    }
-
-    function showDetailModal(cardData, cardElement) {
-        const detailModal = document.createElement('div');
-        detailModal.classList.add('modal', 'show');
-        detailModal.innerHTML = `
-            <div class="modal-contents">
-                ${cardElement.dataset.details}
-                <button class="edit-button">編集</button>
-                <button class="delete-button">削除</button>
-                <button class="favorite-button">${cardData.favorite ? '★ お気に入り' : '☆ お気に入り'}</button>
-                <button class="close-button">閉じる</button>
-            </div>
-        `;
-        document.body.appendChild(detailModal);
-
-        detailModal.querySelector('.edit-button').addEventListener('click', () => {
-            // 編集処理をここに追加
-        });
-
-        detailModal.querySelector('.delete-button').addEventListener('click', () => {
-            // 削除処理をここに追加
-        });
-
-        const favoriteButton = detailModal.querySelector('.favorite-button');
-        favoriteButton.addEventListener('click', () => {
-            cardData.favorite = !cardData.favorite;
-            favoriteButton.textContent = cardData.favorite ? '★ お気に入り' : '☆ お気に入り';
-        });
-
-        detailModal.querySelector('.close-button').addEventListener('click', () => {
-            document.body.removeChild(detailModal);
-        });
-    }
 });

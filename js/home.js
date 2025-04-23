@@ -1,3 +1,5 @@
+// home.htmlのダークモード切替、アクティブ設定、追加モーダルの表示・非表示を制御するJavaScriptコード
+
 // ダークモード切替
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const iconContainer = document.getElementById('icon');
