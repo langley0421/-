@@ -375,9 +375,9 @@ body a {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 50px;
     justify-content: flex-start; /* 左揃え */
-    max-width: 1400px; /* リスト全体の幅を制限 */
+    max-width: 1000px; /* リスト全体の幅を制限 */
     margin: 0 auto; /* リスト全体を中央揃え */
 }
 
