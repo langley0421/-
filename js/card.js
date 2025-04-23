@@ -3,7 +3,8 @@
 import {
     createCardElement,
     displayCards,
-    showDetailModal
+    showDetailModal,
+    toggleViewMode
 } from './utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     homeLink.addEventListener('click', () => {
+        toggleViewMode('search');
         displayCards(allCardsData, cardList, showDetailModal);
     });
 

@@ -81,3 +81,24 @@ export function showDetailModal(cardData, cardElement) {
         document.body.removeChild(detailModal);
     });
 }
+
+export function toggleViewMode(mode) {
+    const searchBar = document.querySelector('.search-bar');
+    const recentFilter = document.getElementById('recent-filter');
+
+    switch (mode) {
+        case 'recent':
+            searchBar.classList.add('hidden');
+            recentFilter.classList.remove('hidden');
+            break;
+        case 'search':
+            searchBar.classList.remove('hidden');
+            recentFilter.classList.add('hidden');
+            break;
+        case 'none':
+        default:
+            searchBar.classList.add('hidden');
+            recentFilter.classList.add('hidden');
+            break;
+    }
+}
