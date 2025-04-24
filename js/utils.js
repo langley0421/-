@@ -207,3 +207,20 @@ export function handleCardSubmission(cardList, modal, showDetailModal, resetCall
     closeModal(modal);
     resetCallback();
 }
+
+
+// ---名刺カードを最近追加順にソートする関数---
+export function sortCardsByDate(cards) {
+    return [...cards].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+}
+
+
+// ---名刺カードを最近追加された順にフィルタリングする関数---
+export function filterCardsByRecentDays(cards, days) {
+    const now = new Date();
+    return cards.filter(card => {
+        const createdAt = new Date(card.created_at);
+        const diffDays = (now - createdAt) / (1000 * 60 * 60 * 24);
+        return diffDays <= days;
+    });
+}
