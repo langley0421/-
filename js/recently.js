@@ -1,7 +1,7 @@
     import {
         displayCards,
         showDetailModal,
-        toggleViewMode // ← 追加
+        toggleViewMode
     } from './utils.js';
     
     document.addEventListener('DOMContentLoaded', () => {
