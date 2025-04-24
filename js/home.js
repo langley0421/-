@@ -1,34 +1,73 @@
-import { 
-    toggleDarkMode, 
-    setActiveLink, 
-    openModal, 
-    closeModal, 
-    setupModalCloseOnOutsideClick 
+import {
+    toggleDarkMode,
+    setActiveLink,
+    openModal,
+    closeModal,
+    resetModalInputs,
+    setupModalCloseOnOutsideClick,
+    handleCardSubmission,
+    displayCards,
+    toggleViewMode,
+    showDetailModal
 } from './utils.js';
 
-import {
-    darkModeToggle,
-    navLinks,
-    addButton,
-    modal,
-    closeButton
-} from './domSelectors.js';
+import { getDOMSelectors } from './domSelectors.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const dom = getDOMSelectors();
+    let allCardsData = [];
 
-    // ---ダークモード切替処理---
-    darkModeToggle.addEventListener('click', toggleDarkMode);
+    fetch('../JSON/data.json')
+        .then(res => res.json())
+        .then(data => {
+            allCardsData = data;
+            displayCards(allCardsData, dom.cardList, showDetailModal);
+            setupCardFilters(dom, allCardsData); // データが取れたあとにフィルター設定
+        });
 
-    // ---サイドバーのアクティブ設定---
-    setActiveLink(navLinks);
-
-    // ---名刺の追加モーダルを表示処理---
-    addButton.addEventListener('click', () => openModal(modal));
-
-    // ---名刺の追加モーダルを閉じる処理---
-    closeButton.addEventListener('click', () => closeModal(modal));
-
-    // ---モーダル外をクリックした際のモーダルを閉じる処理---
-    setupModalCloseOnOutsideClick(modal);
+    setupUIEvents(dom);
+    setupModalEvents(dom);
 });
 
+
+// ---UI全般の初期化---
+function setupUIEvents(dom) {
+    dom.darkModeToggle.addEventListener('click', toggleDarkMode);
+    setActiveLink(dom.navLinks);
+}
+
+// ---モーダル関連イベント---
+function setupModalEvents(dom) {
+    dom.addButton.addEventListener('click', () => openModal(dom.modal));
+    dom.closeButton.addEventListener('click', () => closeModal(dom.modal));
+    dom.resetButton.addEventListener('click', () => resetModalInputs());
+    dom.submitButton.addEventListener('click', () => {
+        handleCardSubmission(dom.cardList, dom.modal, showDetailModal, () => dom.resetButton.click());
+    });
+    setupModalCloseOnOutsideClick(dom.modal);
+}
+
+
+// ---フィルターや検索などカード表示切り替え---
+function setupCardFilters(dom, allCardsData) {
+    dom.homeLink.addEventListener('click', () => {
+        toggleViewMode('search');
+        displayCards(allCardsData, dom.cardList, showDetailModal);
+    });
+
+    dom.favoriteLink.addEventListener('click', () => {
+        const favs = allCardsData.filter(card => card.favorite);
+        displayCards(favs, dom.cardList, showDetailModal);
+    });
+
+    dom.searchButton.addEventListener('click', () => {
+        const query = dom.searchInput.value.trim().toLowerCase();
+        const filtered = allCardsData.filter(card =>
+            card.name.toLowerCase().includes(query) ||
+            card.company.toLowerCase().includes(query) ||
+            card.department.toLowerCase().includes(query) ||
+            card.remarks.toLowerCase().includes(query)
+        );
+        displayCards(filtered, dom.cardList, showDetailModal);
+    });
+}

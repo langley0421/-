@@ -168,3 +168,42 @@ export function setupModalCloseOnOutsideClick(modal) {
         }
     });
 }
+
+
+// ---モーダルフォーム内のすべてのinputをリセットする関数---
+export function resetModalInputs(modalSelector = '.modal-content input') {
+    document.querySelectorAll(modalSelector).forEach(input => input.value = '');
+}
+
+
+// ---フォームからカードデータを取得する関数---
+export function getCardFormData() {
+    return {
+        company: document.querySelector('input[name="company"]').value,
+        name: document.querySelector('input[name="name"]').value,
+        zipcode: document.querySelector('input[name="zipcode"]').value,
+        address: document.querySelector('input[name="address"]').value,
+        department: document.querySelector('input[name="department"]').value,
+        phone: document.querySelector('input[name="phone"]').value,
+        position: document.querySelector('input[name="position"]').value,
+        email: document.querySelector('input[name="email"]').value,
+        remarks: document.querySelector('input[name="remarks"]').value,
+        favorite: false
+    };
+}
+
+
+// ---バリデーション付きでカードを追加する関数---
+export function handleCardSubmission(cardList, modal, showDetailModal, resetCallback) {
+    const cardData = getCardFormData();
+
+    if (!cardData.name) {
+        alert('氏名は必須です。');
+        return;
+    }
+
+    const card = createCardElement(cardData, showDetailModal);
+    cardList.appendChild(card);
+    closeModal(modal);
+    resetCallback();
+}
