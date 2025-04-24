@@ -11,7 +11,9 @@ import {
     showDetailModal
 } from './utils.js';
 
-import { getDOMSelectors } from './domSelectors.js';
+import { 
+    getDOMSelectors 
+} from './domSelectors.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const dom = getDOMSelectors();

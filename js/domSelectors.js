@@ -1,4 +1,6 @@
-// domSelectors.js
+// ---DOMセレクター---
+
+
 
 export function getDOMSelectors() {
     return {
