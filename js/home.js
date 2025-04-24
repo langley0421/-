@@ -1,4 +1,3 @@
-// --- 共通ユーティリティ関数の読み込み ---
 import {
     toggleDarkMode,                      
     setActiveLink,                       
