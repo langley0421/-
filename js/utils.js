@@ -2,7 +2,23 @@
 
 
 
-// ---単一の名刺カードを生成する関数。クリック時のコールバックも登録可能---
+// ---名刺データから詳細表示用のHTML文字列を生成する関数---
+export function generateCardDetailsHTML(data) {
+    return `
+        <h3>${data.name}</h3>
+        <p>会社名: ${data.company}</p>
+        <p>郵便番号: ${data.zipcode}</p>
+        <p>住所: ${data.address}</p>
+        <p>部署名: ${data.department}</p>
+        <p>電話番号: ${data.phone}</p>
+        <p>役職名: ${data.position}</p>
+        <p>メールアドレス: ${data.email}</p>
+        <p>備考: ${data.remarks}</p>
+    `;
+}
+
+
+// ---単一の名刺カードを生成する関数。クリック時のコールバックも---
 export function createCardElement(cardData, onCardClick) {
     const { company, name } = cardData;
 
@@ -22,7 +38,7 @@ export function createCardElement(cardData, onCardClick) {
 }
 
 
-// ---名刺一覧を表示する。空配列なら「該当なし」のメッセージを表示---
+// ---名刺一覧を表示する。空なら「該当なし」のメッセージを表示---
 export function displayCards(cards, cardList, onCardClick) {
     cardList.innerHTML = '';
 
@@ -41,19 +57,26 @@ export function displayCards(cards, cardList, onCardClick) {
 }
 
 
-// ---名刺データから詳細表示用のHTML文字列を生成する関数---
-export function generateCardDetailsHTML(data) {
-    return `
-        <h3>${data.name}</h3>
-        <p>会社名: ${data.company}</p>
-        <p>郵便番号: ${data.zipcode}</p>
-        <p>住所: ${data.address}</p>
-        <p>部署名: ${data.department}</p>
-        <p>電話番号: ${data.phone}</p>
-        <p>役職名: ${data.position}</p>
-        <p>メールアドレス: ${data.email}</p>
-        <p>備考: ${data.remarks}</p>
-    `;
+// ---「検索モード」「最近追加モード」など、表示切替を行う関数---
+export function toggleViewMode(mode) {
+    const searchBar = document.querySelector('.search-bar');
+    const recentFilter = document.getElementById('recent-filter');
+
+    switch (mode) {
+        case 'recent':
+            searchBar.classList.add('hidden');
+            recentFilter.classList.remove('hidden');
+            break;
+        case 'search':
+            searchBar.classList.remove('hidden');
+            recentFilter.classList.add('hidden');
+            break;
+        case 'none':
+        default:
+            searchBar.classList.add('hidden');
+            recentFilter.classList.add('hidden');
+            break;
+    }
 }
 
 
@@ -92,26 +115,33 @@ export function showDetailModal(cardData, cardElement) {
 }
 
 
-// ---「検索モード」「最近追加モード」など、表示切替を行う関数---
-export function toggleViewMode(mode) {
-    const searchBar = document.querySelector('.search-bar');
-    const recentFilter = document.getElementById('recent-filter');
+// ---モーダルを「表示」状態にする関数---
+export function openModal(modal) {
+    modal.classList.add('show');
+    modal.classList.remove('hidden');
+}
 
-    switch (mode) {
-        case 'recent':
-            searchBar.classList.add('hidden');
-            recentFilter.classList.remove('hidden');
-            break;
-        case 'search':
-            searchBar.classList.remove('hidden');
-            recentFilter.classList.add('hidden');
-            break;
-        case 'none':
-        default:
-            searchBar.classList.add('hidden');
-            recentFilter.classList.add('hidden');
-            break;
-    }
+
+// ---モーダルを「非表示」状態にする関数---
+export function closeModal(modal) {
+    modal.classList.remove('show');
+    modal.classList.add('hidden');
+}
+
+
+// ---モーダルの外側をクリックした時にモーダルを閉じる処理---
+export function setupModalCloseOnOutsideClick(modal) {
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal(modal);
+        }
+    });
+}
+
+
+// ---モーダルフォーム内のすべてのinputをリセットする関数---
+export function resetModalInputs(modalSelector = '.modal-content input') {
+    document.querySelectorAll(modalSelector).forEach(input => input.value = '');
 }
 
 
@@ -143,36 +173,6 @@ export function setActiveLink(navLinks, activeClass = 'active', defaultHref = '#
             link.classList.add(activeClass);
         });
     });
-}
-
-
-// ---モーダルを「表示」状態にする関数---
-export function openModal(modal) {
-    modal.classList.add('show');
-    modal.classList.remove('hidden');
-}
-
-
-// ---モーダルを「非表示」状態にする関数---
-export function closeModal(modal) {
-    modal.classList.remove('show');
-    modal.classList.add('hidden');
-}
-
-
-// ---モーダルの外側をクリックした時にモーダルを閉じる処理---
-export function setupModalCloseOnOutsideClick(modal) {
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModal(modal);
-        }
-    });
-}
-
-
-// ---モーダルフォーム内のすべてのinputをリセットする関数---
-export function resetModalInputs(modalSelector = '.modal-content input') {
-    document.querySelectorAll(modalSelector).forEach(input => input.value = '');
 }
 
 
@@ -211,6 +211,7 @@ export function handleCardSubmission(cardList, modal, showDetailModal, resetCall
 
 // ---名刺カードを最近追加順にソートする関数---
 export function sortCardsByDate(cards) {
+    //スプレット構文　...cards中身取り出して展開
     return [...cards].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 }
 
