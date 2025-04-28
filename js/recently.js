@@ -11,7 +11,7 @@ import {
 } from './domSelectors.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 必要なDOM要素を取得(まとめたほうがいいかも？)
+    // 必要なDOM要素を取得
     const { recentlyLink, cardList, dayFilterInput, applyFilterButton } = getDOMSelectors();
     // 全てのカードデータを格納する変数
     let allCardsData = [];
