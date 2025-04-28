@@ -90,3 +90,30 @@ body {
     color: #0070f3;
     text-decoration: none;
 }
+
+#modalWindow {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 9999;
+}
+
+.box {
+    background: white;
+    margin-top: 50px; /* ちょっと下からスタート */
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    transform: translateY(-200px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 10000;
+}
+
+.hidden {
+    display: none !important;
+}
+/* ｃｓｓなおせええええええええええええええ */

@@ -3,6 +3,23 @@ document.getElementById("registerForm").addEventListener('submit', function(even
     register();
 });
     
+
+function showModal(message, redirectUrl) {
+    const alert = document.getElementById('modalWindow');
+    const alertMessage = document.getElementById('modal');
+  
+    alertMessage.textContent = message;
+    alert.classList.remove('hidden');
+    
+    alert.classList.add('show');
+    setTimeout(() => {
+        alert.classList.remove('show');
+        alert.classList.add('hidden');
+    }, 200000);
+  }
+
+  
+
 function register() {
 
     const email = document.getElementById("email").value;
@@ -10,14 +27,14 @@ function register() {
     const passwordConfirm = document.getElementById("confirmPassword").value;
 
     if(password !== passwordConfirm) {
-        alert("パスワードが一致しません。");
+        showModal("パスワードが一致しません。");
         return;
     }
 
     const userData = JSON.parse(localStorage.getItem("userData")) || {};
     
     if(userData[email]){
-        alert("このメールアドレスは既に登録されています。");
+        showModal("このメールアドレスは既に登録されています。");
         return;
     }
 
@@ -26,11 +43,13 @@ function register() {
     // ローカルストレージにデータを保存
     try {
         localStorage.setItem("userData", JSON.stringify(userData));
-        alert("登録が完了しました。");
-        window.location.href = "login.html"; // ログイン成功後、index.htmlにリダイレクト
+        showModal("登録が完了しました。");
+        setTimeout(() => {
+            window.location.href = "home.html";
+          }, 2000);
     } catch (error) {
         console.error("ローカルストレージへの保存に失敗しました:", error);
-        alert("データの保存に失敗しました。");
+        showModal("データの保存に失敗しました。");
     }
     
 }
