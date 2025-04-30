@@ -4,19 +4,19 @@ document.getElementById("registerForm").addEventListener('submit', function(even
 });
     
 
-function showModal(message, redirectUrl) {
-    const alert = document.getElementById('modalWindow');
-    const alertMessage = document.getElementById('modal');
+// function showModal(message, redirectUrl) {
+//     const alert = document.getElementById('modalWindow');
+//     const alertMessage = document.getElementById('modal');
   
-    alertMessage.textContent = message;
-    alert.classList.remove('hidden');
+//     alertMessage.textContent = message;
+//     alert.classList.remove('hidden');
     
-    alert.classList.add('show');
-    setTimeout(() => {
-        alert.classList.remove('show');
-        alert.classList.add('hidden');
-    }, 200000);
-  }
+//     alert.classList.add('show');
+//     setTimeout(() => {
+//         alert.classList.remove('show');
+//         alert.classList.add('hidden');
+//     }, 200000);
+//   }
 
   
 
@@ -43,10 +43,9 @@ function register() {
     // ローカルストレージにデータを保存
     try {
         localStorage.setItem("userData", JSON.stringify(userData));
-        showModal("登録が完了しました。");
-        setTimeout(() => {
-            window.location.href = "home.html";
-          }, 2000);
+        alert("登録が完了しました。");
+        window.location.href = "login.html";
+
     } catch (error) {
         console.error("ローカルストレージへの保存に失敗しました:", error);
         showModal("データの保存に失敗しました。");

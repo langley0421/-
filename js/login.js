@@ -1,4 +1,7 @@
-
+document.querySelector(".form").addEventListener('submit', function(event) {
+    event.preventDefault(); // フォームのデフォルト動作（リロード）を止める
+    login();
+});
 
 function setCookie(name, value, days) {
     const date = new Date();
